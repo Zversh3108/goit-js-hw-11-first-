@@ -7,12 +7,12 @@ const refs = {
   loadMoreBtn: document.querySelector('.load-more-btn'),
 };
 
-
+const galleryApiServise = new GalleryApiServise();
 let photosMarkup = '';
 
 async function onSearch(evt) {
   evt.preventDefault();
-const galleryApiServise = new GalleryApiServise();
+
   galleryApiServise.data = refs.input.value;
   try {
     const resetPage = await galleryApiServise.resetPage();
